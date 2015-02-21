@@ -11,12 +11,21 @@ import android.widget.Button;
 
 public class MinionMenuActivity extends MinionActivity {
 
+    private int myRowValue;
+    private int myColValue;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_minion_menu);
 
         chooseActivityFromMainMenu();
+        Intent in = getIntent();
+        myRowValue = in.getIntExtra("rowValueInt", 0);
+
+
+        Intent in2 = getIntent();
+        myColValue = in2.getIntExtra("colValueInt",0);
+
 
     }
 
@@ -32,7 +41,10 @@ public class MinionMenuActivity extends MinionActivity {
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(MinionMenuActivity.this, MinionGameActivity.class));
+                Intent intent = new Intent(MinionMenuActivity.this, MinionGameActivity.class);
+                intent.putExtra("finalRow",myRowValue);
+                intent.putExtra("finalCol",myColValue);
+                startActivity(intent);
 
             }
         });

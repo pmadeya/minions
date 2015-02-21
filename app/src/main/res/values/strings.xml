@@ -18,5 +18,7 @@
     <string name="Options_menu">Options</string>
     <string name="help_menu">Help</string>
 
-
+    <string name="row_num">Enter number of rows</string>
+    <string name="col_num">Enter number of columns</string>
+    <string name="btn_back_home">Done !</string>
 </resources>
