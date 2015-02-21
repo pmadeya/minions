@@ -1,9 +1,13 @@
 package project3.cmpt276.ca.minions;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 
 public class MinionOptionActivity extends MinionActivity {
@@ -12,6 +16,34 @@ public class MinionOptionActivity extends MinionActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_minion_option);
+
+
+
+
+        Button doneBtn = (Button)findViewById(R.id.btnBackHome);
+        doneBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText rowNum = (EditText)findViewById(R.id.rowValue);
+                EditText colNum = (EditText)findViewById(R.id.colValue);
+
+                String rowNumString = rowNum.getText().toString();
+                int rowNumInteger = Integer.parseInt(rowNumString);
+
+                String colNumString = colNum.getText().toString();
+                int colNumInteger = Integer.parseInt(colNumString);
+
+                Intent intent = new Intent(MinionOptionActivity.this, MinionMenuActivity.class);
+                intent.putExtra("rowValueInt", rowNumInteger);
+                intent.putExtra("colValueInt", colNumInteger);
+
+                startActivity(intent);
+            }
+        });
+
+
+
+
     }
 
 
