@@ -22,9 +22,6 @@ public class MinionGameActivity extends MinionActivity {
         setContentView(R.layout.activity_minion_game);
         generateBoard();
 
-
-
-
     }
 
     private void generateBoard() {
