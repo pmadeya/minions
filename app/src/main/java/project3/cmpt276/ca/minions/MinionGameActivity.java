@@ -13,20 +13,18 @@ import android.widget.TableRow;
 
 public class MinionGameActivity extends MinionActivity {
 
-    private static final int NUM_ROWS = 3;
-    private static final int NUM_COLS = 4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_minion_game);
-        generateBoard();
 
+        generateBoard(MinionMenuActivity.myRowValue, MinionMenuActivity.myColValue);
     }
 
-    private void generateBoard() {
+    private void generateBoard(int x, int y) {
         TableLayout table = (TableLayout) findViewById(R.id.gameGrid);
-        for (int row = 0; row < NUM_ROWS; row++) {
+        for (int row = 0; row < x; row++) {
             TableRow tableRow = new TableRow(this);
             tableRow.setLayoutParams(new TableLayout.LayoutParams(
                     TableLayout.LayoutParams.MATCH_PARENT,
@@ -34,7 +32,7 @@ public class MinionGameActivity extends MinionActivity {
                     1.0f));
             table.addView(tableRow);
 
-            for (int col = 0; col < NUM_COLS; col++) {
+            for (int col = 0; col < y; col++) {
                 Button button = new Button(this);
                 button.setLayoutParams(new TableRow.LayoutParams(
                         TableRow.LayoutParams.MATCH_PARENT,
@@ -44,10 +42,4 @@ public class MinionGameActivity extends MinionActivity {
             }
         }
     }
-
-
-
-
-
-
 }

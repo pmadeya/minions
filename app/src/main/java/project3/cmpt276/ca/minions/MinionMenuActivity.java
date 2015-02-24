@@ -11,8 +11,8 @@ import android.widget.Button;
 
 public class MinionMenuActivity extends MinionActivity {
 
-    private int myRowValue;
-    private int myColValue;
+    public static int myRowValue;
+    public static int myColValue;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

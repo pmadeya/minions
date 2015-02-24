@@ -21,4 +21,5 @@
     <string name="row_num">Enter number of rows</string>
     <string name="col_num">Enter number of columns</string>
     <string name="btn_back_home">Done !</string>
+    <string name="welcome_title">Minions</string>
 </resources>
