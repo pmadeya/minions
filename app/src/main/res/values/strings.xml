@@ -22,4 +22,5 @@
     <string name="col_num">Enter number of columns</string>
     <string name="btn_back_home">Done !</string>
     <string name="welcome_title">Minions</string>
+    <string name="authors"><![CDATA[By: Arsalan Noroozzadeh & Paul Madeya]]></string>
 </resources>
