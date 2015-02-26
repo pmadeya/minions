@@ -10,50 +10,62 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/row_num"
+        android:text="@string/board_size"
         android:id="@+id/rowText"
-        android:layout_alignParentTop="true"
+        android:textSize="25dp"
+        android:layout_below="@+id/optionsText"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="59dp"
-        android:textSize="25dp" />
+        android:layout_marginBottom="20dp" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/rowValue"
-        android:inputType="number"
-        android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/rowText"
-        android:layout_toEndOf="@+id/rowText" />
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/col_num"
+        android:text="@string/minion_num"
         android:id="@+id/colText"
-        android:layout_alignParentStart="true"
         android:textSize="25dp"
-        android:layout_below="@+id/rowValue"
-        android:layout_marginTop="20dp"
-        android:layout_toStartOf="@+id/rowValue" />
+        android:layout_below="@+id/rowText"
+        android:layout_alignParentStart="true" />
 
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/colValue"
-        android:layout_alignBottom="@+id/colText"
-        android:layout_alignEnd="@+id/rowValue"
-        android:layout_toEndOf="@+id/colText"
-        android:inputType="number"
-        android:layout_alignTop="@+id/colText"
-        android:layout_alignParentEnd="false" />
+        android:text="@string/Options_menu"
+        android:id="@+id/optionsText"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="50dp"
+        android:textColor="#000"
+        android:layout_marginBottom="30dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/btn_back_home"
         android:id="@+id/btnBackHome"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/colText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="49dp" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/board_spinner"
+        android:layout_toEndOf="@+id/rowText"
+        android:layout_alignTop="@+id/rowText"
+        android:layout_marginLeft="100dp"
+        android:layout_alignBottom="@+id/rowText"
+        android:transitionGroup="false" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/numMinionSpinner"
+        android:layout_alignBottom="@+id/colText"
+        android:layout_alignStart="@+id/board_spinner"
+        android:layout_alignTop="@+id/colText"
+        android:layout_alignEnd="@+id/btnBackHome" />
+
 
 </RelativeLayout>

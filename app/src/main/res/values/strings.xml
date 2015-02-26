@@ -18,8 +18,16 @@
     <string name="Options_menu">Options</string>
     <string name="help_menu">Help</string>
 
-    <string name="row_num">Enter number of rows</string>
-    <string name="col_num">Enter number of columns</string>
+    <string name="board_size">Board Size:</string>
+    <string name="minion_num">Number of Minions</string>
     <string name="btn_back_home">Done !</string>
     <string name="welcome_title">Minions</string>
+    <string name="options_title">Options</string>
+
+    <string-array name="sizeOfBoard">
+        <item>3 x 4</item>
+        <item>4 x 6</item>
+        <item>8 x 12</item>
+
+    </string-array>
 </resources>

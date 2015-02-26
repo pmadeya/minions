@@ -22,7 +22,8 @@
         </activity>
         <activity
             android:name=".MinionOptionActivity"
-            android:label="@string/title_activity_minion_option" >
+            android:label="@string/title_activity_minion_option"
+            android:screenOrientation="landscape">
         </activity>
         <activity
             android:name=".MinionHelpActivity"
