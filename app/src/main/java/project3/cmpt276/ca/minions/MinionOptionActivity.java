@@ -17,13 +17,19 @@ import android.widget.Spinner;
 public class MinionOptionActivity extends MinionActivity {
 
     private Spinner sp1;
-
+    private Spinner sp2;
+    private int rowNumber;
+    private int colNumber;
+    private int minionsNumber;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_minion_option);
+
         makeBoardSpinnerBar();
         addListenerToBoardSpinner();
+        makeMinionsNumBar();
+        addListenerToMinionBar();
 
 
 
@@ -31,12 +37,38 @@ public class MinionOptionActivity extends MinionActivity {
         doneBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String boardGrid = String.valueOf(sp1.getSelectedItem());
+                if(boardGrid.equals("4x6")){
+                    rowNumber = 4;
+                    colNumber = 6;
 
-
+                }
+                else if(boardGrid.equals("3x4")){
+                    rowNumber = 3;
+                    colNumber = 4;
+                }
+                else{
+                    rowNumber = 8;
+                    colNumber = 12;
+                }
+                String NumberOfGivenMinions = sp2.getSelectedItem().toString().trim();
+                if(NumberOfGivenMinions.equals("6")){
+                    minionsNumber = 6;
+                }
+                else if(NumberOfGivenMinions.equals("10")){
+                    minionsNumber = 10;
+                }
+                else if(NumberOfGivenMinions.equals("15")){
+                    minionsNumber = 15;
+                }
+                else{
+                    minionsNumber = 20;
+                }
 
                 Intent intent = new Intent(MinionOptionActivity.this, MinionMenuActivity.class);
-                //intent.putExtra("rowValueInt", rowNumInteger);
-                //intent.putExtra("colValueInt", colNumInteger);
+                intent.putExtra("rowValueInt", rowNumber);
+                intent.putExtra("colValueInt", colNumber);
+                intent.putExtra("NumberOfMinions", minionsNumber);
 
                 startActivity(intent);
             }
@@ -79,6 +111,40 @@ public class MinionOptionActivity extends MinionActivity {
 
 
     }
+   private void  makeMinionsNumBar(){
+       sp2 = (Spinner) findViewById(R.id.minions_num);
+// Create an ArrayAdapter using the string array and a default spinner layout
+       ArrayAdapter<CharSequence> boardSizes = ArrayAdapter.createFromResource(this,
+               R.array.minNum, android.R.layout.simple_spinner_item);
+// Specify the layout to use when the list of choices appears
+       boardSizes.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+// Apply the adapter to the spinner
+       sp2.setAdapter(boardSizes);
+
+
+   }
+
+    private void addListenerToMinionBar(){
+        sp2=(Spinner) findViewById(R.id.minions_num);
+        sp2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                String itemU3=parent.getItemAtPosition(position).toString();
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+
+            }
+        });
+
+
+    }
+
+
 
 
     @Override

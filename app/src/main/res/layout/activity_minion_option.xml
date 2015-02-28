@@ -52,20 +52,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/board_spinner"
-        android:layout_toEndOf="@+id/rowText"
-        android:layout_alignTop="@+id/rowText"
-        android:layout_marginLeft="100dp"
         android:layout_alignBottom="@+id/rowText"
-        android:transitionGroup="false" />
+        android:layout_alignTop="@+id/rowText"
+        android:layout_toEndOf="@+id/rowText"
+        android:layout_alignStart="@+id/minions_num" />
 
     <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/numMinionSpinner"
-        android:layout_alignBottom="@+id/colText"
-        android:layout_alignStart="@+id/board_spinner"
+        android:id="@+id/minions_num"
+        android:layout_above="@+id/btnBackHome"
         android:layout_alignTop="@+id/colText"
-        android:layout_alignEnd="@+id/btnBackHome" />
+        android:layout_toEndOf="@+id/rowText"
+        android:layout_alignStart="@+id/optionsText" />
 
 
 </RelativeLayout>

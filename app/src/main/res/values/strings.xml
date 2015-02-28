@@ -23,4 +23,22 @@
     <string name="btn_back_home">Done !</string>
     <string name="welcome_title">Minions</string>
     <string name="authors"><![CDATA[By: Arsalan Noroozzadeh & Paul Madeya]]></string>
+    <string-array name="sizeOfBoard">
+
+        <item>3x4</item>
+        <item>4x6</item>
+        <item>8x12</item>
+    </string-array>
+
+    <string-array name="minNum">
+        <item>6</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+    </string-array>
+
+
+    <string name="board_size">Board Size</string>
+    <string name="minion_num">Number of Minions</string>
+
 </resources>

@@ -13,6 +13,7 @@ public class MinionMenuActivity extends MinionActivity {
 
     public static int myRowValue;
     public static int myColValue;
+    public static int myMinionNum;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,9 +23,11 @@ public class MinionMenuActivity extends MinionActivity {
         Intent in = getIntent();
         myRowValue = in.getIntExtra("rowValueInt", 0);
 
-
         Intent in2 = getIntent();
         myColValue = in2.getIntExtra("colValueInt",0);
+
+        Intent in3 =getIntent();
+        myMinionNum = in3.getIntExtra("NumberOfMinions",0);
 
 
     }
@@ -44,6 +47,7 @@ public class MinionMenuActivity extends MinionActivity {
                 Intent intent = new Intent(MinionMenuActivity.this, MinionGameActivity.class);
                 intent.putExtra("finalRow",myRowValue);
                 intent.putExtra("finalCol",myColValue);
+                intent.putExtra("finalMinionNum",myMinionNum);
                 startActivity(intent);
 
             }
