@@ -3,6 +3,7 @@ package project3.cmpt276.ca.minions;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,7 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-
+import android.widget.Toast;
 
 
 public class MinionOptionActivity extends MinionActivity {
@@ -65,12 +66,21 @@ public class MinionOptionActivity extends MinionActivity {
                     minionsNumber = 20;
                 }
 
-                Intent intent = new Intent(MinionOptionActivity.this, MinionMenuActivity.class);
-                intent.putExtra("rowValueInt", rowNumber);
-                intent.putExtra("colValueInt", colNumber);
-                intent.putExtra("NumberOfMinions", minionsNumber);
+                if (boardGrid.equals("3x4") && (NumberOfGivenMinions.equals("15")||NumberOfGivenMinions.equals("20"))){
 
-                startActivity(intent);
+                    Toast.makeText(getApplicationContext(), "This Combination is not possible. Choose another one",
+                            Toast.LENGTH_LONG).show();
+
+                }
+                else{
+                    Intent intent = new Intent(MinionOptionActivity.this, MinionMenuActivity.class);
+                    intent.putExtra("rowValueInt", rowNumber);
+                    intent.putExtra("colValueInt", colNumber);
+                    intent.putExtra("NumberOfMinions", minionsNumber);
+
+                    startActivity(intent);
+
+                }
             }
         });
 
